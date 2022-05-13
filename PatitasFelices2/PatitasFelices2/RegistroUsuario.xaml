@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatitasFelices2.RegistroUsuario">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame BackgroundColor="White"  Padding="0.5" CornerRadius="0" >
+                    <Image Source="patitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
+                </Frame>
+
+                <Label x:Name="lbl_principal" Text="BIENVENIDO REGISTRESE" FontSize="Medium"/>
+                <ProgressBar x:Name="progress" Progress=".5"/>
+                <Grid>
+                    <Label x:Name="lbl_progress" Text="50%" FontSize="Large"/>
+                    
+                </Grid>
+                <Frame>
+                    <StackLayout>
+                       
+                        <Entry x:Name="lbl_nombre" Placeholder="Ingrese su nombre" FontSize="Medium" Completed="lbl_nombre_Completed" TextChanged="lbl_nombre_TextChanged"></Entry>
+                        <Entry x:Name="lbl_apellido" Placeholder="Ingrese su apellido" FontSize="Medium" Completed="lbl_apellido_Completed" TextChanged="lbl_apellido_TextChanged"></Entry>
+                        <Entry x:Name="lbl_domicilio" Placeholder="Ingrese su domicilio" FontSize="Medium" Completed="lbl_domicilio_Completed" TextChanged="lbl_domicilio_TextChanged"></Entry>
+                        <Entry x:Name="lbl_telefono" Placeholder="Ingrese su telefono" FontSize="Medium" Completed="lbl_telefono_Completed" TextChanged="lbl_telefono_TextChanged" Keyboard="Numeric"></Entry>
+                        <Entry x:Name="lbl_correo" Placeholder="Email" Text="{Binding Email.value}" FontSize="Medium" Completed="lbl_correo_Completed" ></Entry>
+                        <Entry x:Name="lbl_usuario" Placeholder="Ingrese su usuario" FontSize="Medium" Completed="lbl_usuario_Completed"></Entry>
+                        <Entry x:Name="lbl_password" Placeholder="Ingrese su contraseña" FontSize="Medium" IsPassword="True" Completed="lbl_password_Completed"></Entry>
+                        <Entry x:Name="lbl_password2" Placeholder="Ingrese nuevamente su contraseña" FontSize="Medium" IsPassword="True" Completed="lbl_password2_Completed"></Entry>
+                        <Grid ColumnDefinitions="auto,*" >
+                            <CheckBox x:Name="cbox_terminos" IsChecked="False" CheckedChanged="cbox_terminos_CheckedChanged" Grid.Column="0"></CheckBox>
+                            <Label Text="Acepto los terminos y condiciones" Grid.Column="1" VerticalOptions="Center"></Label>
+                        </Grid>
+
+                    </StackLayout>
+                </Frame>
+                <Button x:Name="btn_registrar" Text="REGISTRAR" FontSize="Large"
+                    Clicked="btn_registrar_Clicked" CornerRadius="10" IsEnabled="False"
+                    TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
+                    Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatitasFelices2.UsuariosRegistrados">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label HorizontalTextAlignment="Center" Text="Listado de Usuarios Registrados en el Sistema Patitas Felices App"></Label>
+            <Label x:Name="Usuario"></Label>
+            <Button x:Name="btnConsultaUsuarios" Text="Consultar Todos" Clicked="btnConsultaUsuarios_Clicked"></Button>
+            <ListView x:Name="listListadeUsuarios" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <StackLayout>
+                                <Label x:Name="lblusuariolista" Text="{Binding nombre}"></Label>
+                                <Label x:Name="lblapellidolista" Text="{Binding apellido}"></Label>
+                                <Label x:Name="lblnicklista" Text="{Binding nick}"></Label>
+
+                            </StackLayout>
+                        </ViewCell>
+                        
+                    </DataTemplate>
+                    
+                    
+                </ListView.ItemTemplate>
+                
+                
+                
+                
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
