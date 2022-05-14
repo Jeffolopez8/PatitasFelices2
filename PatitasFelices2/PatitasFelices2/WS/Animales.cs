@@ -13,6 +13,9 @@ namespace PatitasFelices2.WS
 
         public string fecharegistro { get; set; }
         public int estado { get; set; }
+
+        public string codigoUsuario { get; set; }
+       
        
 
     }

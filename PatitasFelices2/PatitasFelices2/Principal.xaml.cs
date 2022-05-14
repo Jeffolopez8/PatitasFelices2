@@ -17,9 +17,9 @@ namespace PatitasFelices2
             InitializeComponent();
         }
 
-        private void btnMisMascotas_Clicked(object sender, EventArgs e)
+        private async void btnMisMascotas_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ListadoMascotas());
         }
 
         private void btnMiPerfil_Clicked(object sender, EventArgs e)

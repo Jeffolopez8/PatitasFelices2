@@ -3,10 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PatitasFelices2.ListadoMascotas">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label HorizontalTextAlignment="Center" Text="Mis Mascotas"></Label>
+            <Label x:Name="Mascota"></Label>
+            <Button x:Name="btnConsultaUsuarios" Text="Consultar Todos" Clicked="btnConsultaUsuarios_Clicked_1"></Button>
+            <ListView x:Name="listListadeMascotas" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <StackLayout>
+                                <Label x:Name="lblMascotalista" Text="{Binding nombre}" ></Label>
+                                                              
+
+                            </StackLayout>
+                        </ViewCell>
+
+                    </DataTemplate>
+
+
+                </ListView.ItemTemplate>
+
+
+
+
+            </ListView>
         </StackLayout>
+
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

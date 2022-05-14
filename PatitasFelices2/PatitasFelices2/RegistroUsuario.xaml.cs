@@ -92,6 +92,8 @@ namespace PatitasFelices2
 
                         cliente.UploadValues("http://200.12.169.100/patitas/usuarios/post.php","POST",parametros);
 
+                      
+
                         await DisplayAlert("Alerta","Usuario Ingresado Correctamente","Ok");
 
 
