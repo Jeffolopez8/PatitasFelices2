@@ -1,18 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PatitasFelices2.RegistroUsuario">
+             x:Class="PatitasFelices2.RegistroUsuario"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Frame BackgroundColor="White"  Padding="0.5" CornerRadius="0" >
-                    <Image Source="patitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
+                <Frame BackgroundColor="Blue"  Padding="0.5" CornerRadius="0" >
+                    <Image Source="logopatitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
                 </Frame>
 
-                <Label x:Name="lbl_principal" Text="BIENVENIDO REGISTRESE" FontSize="Medium"/>
-                <ProgressBar x:Name="progress" Progress=".5"/>
+                <ProgressBar x:Name="progress" Progress=".0"/>
+                <Label x:Name="lbl_progress" Text="0%" FontSize="Large"/>
                 <Grid>
-                    <Label x:Name="lbl_progress" Text="50%" FontSize="Large"/>
+                    <Label x:Name="lbl_principal1" Text="BIENVENIDO REGISTRESE" FontSize="Medium"/>
+                    
                     
                 </Grid>
                 <Frame>

@@ -10,7 +10,7 @@ namespace PatitasFelices2
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new UsuariosRegistrados());
+            MainPage = new NavigationPage(new LoginPF());
         }
 
         protected override void OnStart()

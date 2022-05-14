@@ -24,7 +24,10 @@
 
                     <StackLayout Orientation="Horizontal" >
                         <Label Text="¿Recuperar Contraseña?" FontAttributes="Bold" />
-                        <Label Text="Registrarse" HorizontalOptions="EndAndExpand" FontAttributes="Bold" x:Name="lblregistroApp"></Label>
+                        <Label Text="Registrarse" HorizontalOptions="EndAndExpand" FontAttributes="Bold" x:Name="lblregistroApp">
+                            
+                        </Label>
+                        <Button x:Name="BtnRegistro" Text="Registro" Clicked="BtnRegistro_Clicked"></Button>
                     </StackLayout>
 
                 </StackLayout>

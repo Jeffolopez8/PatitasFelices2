@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +16,6 @@ namespace PatitasFelices2
         public RegistroUsuario()
         {
             InitializeComponent();
-            InitializeComponent();
             progress.ProgressTo(.0, 250, Easing.Linear);
             lbl_progress.Text = "0%";
         }
@@ -24,7 +24,7 @@ namespace PatitasFelices2
         {
             string nombre = lbl_nombre.Text.ToString();
             string cadena = $"Bienvenido  {nombre}, llena tus datos";
-            lbl_principal.Text = cadena;
+            lbl_principal1.Text = cadena;
         }
 
         private void lbl_apellido_TextChanged(object sender, TextChangedEventArgs e)
@@ -70,19 +70,47 @@ namespace PatitasFelices2
 
         }
 
-        private void btn_registrar_Clicked(object sender, EventArgs e)
+        private async void btn_registrar_Clicked(object sender, EventArgs e)
         {
             if (lbl_progress.Text == "100%") { 
 
                 if (lbl_password.Text == lbl_password2.Text)
                 {
+                    try
+                    {
+                        WebClient cliente = new WebClient();
+                        var parametros = new System.Collections.Specialized.NameValueCollection();
+
+                        parametros.Add("codigo", "");
+                        parametros.Add("nombre", lbl_nombre.Text);
+                        parametros.Add("apellido", lbl_apellido.Text);
+                        parametros.Add("direccion", lbl_domicilio.Text);
+                        parametros.Add("telefono", lbl_telefono.Text);
+                        parametros.Add("correo", lbl_correo.Text);
+                        parametros.Add("nick", lbl_usuario.Text);
+                        parametros.Add("clave", lbl_password.Text);
+
+                        cliente.UploadValues("http://200.12.169.100/patitas/usuarios/post.php","POST",parametros);
+
+                        await DisplayAlert("Alerta","Usuario Ingresado Correctamente","Ok");
+
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        await DisplayAlert("Error", "Usuario No Ingresado" + ex.Message , "Ok");
+                    }
+                    
                     limpiarRegistros();
 
-                    DisplayAlert("Registro Exitoso", "Bienvenido", "Ok");
+
+
+
                 }
                 else
                 {
-                    DisplayAlert("Contraseña diferente", "Ambas contraseñas deben ser iguales", "modificar");
+                    await DisplayAlert("Contraseña diferente", "Ambas contraseñas deben ser iguales", "modificar");
                     lbl_password.Text = "";
                     lbl_password2.Text = "";
                 }
@@ -90,7 +118,7 @@ namespace PatitasFelices2
             else
                 
             {
-                DisplayAlert("Registro Faliido", "Debe llenar todos los campos reuqeridos", "Ok");
+                await DisplayAlert("Registro Faliido", "Debe llenar todos los campos reuqeridos", "Ok");
             }
             
         }

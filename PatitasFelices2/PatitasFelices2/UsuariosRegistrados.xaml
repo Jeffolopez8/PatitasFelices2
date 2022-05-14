@@ -13,9 +13,9 @@
                         <ViewCell>
 
                             <StackLayout>
-                                <Label x:Name="lblusuariolista" Text="{Binding nombre}"></Label>
+                                <Label x:Name="lblusuariolista" Text="{Binding nombre}" ></Label>
                                 <Label x:Name="lblapellidolista" Text="{Binding apellido}"></Label>
-                                <Label x:Name="lblnicklista" Text="{Binding nick}"></Label>
+                                
 
                             </StackLayout>
                         </ViewCell>

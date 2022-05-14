@@ -2,7 +2,8 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
             xmlns:local="clr-namespace:PatitasFelices2"
-            x:Class="PatitasFelices2.OpcionesPP">
+            x:Class="PatitasFelices2.OpcionesPP"
+            NavigationPage.HasNavigationBar="False">
 
     <local:Principal></local:Principal>
     <local:QR></local:QR>
