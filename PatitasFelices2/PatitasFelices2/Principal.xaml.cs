@@ -22,9 +22,9 @@ namespace PatitasFelices2
             await Navigation.PushAsync(new ListadoMascotas());
         }
 
-        private void btnMiPerfil_Clicked(object sender, EventArgs e)
+        private async void btnMiPerfil_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ActualizaUsuarios());
         }
     }
 }

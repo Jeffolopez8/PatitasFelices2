@@ -5,10 +5,59 @@
     <ContentPage.Content>
         <ScrollView>
         <StackLayout>
-            <Label HorizontalTextAlignment="Center" Text="Mis Mascotas"></Label>
-            <Label x:Name="Mascota"></Label>
-            <Button x:Name="btnConsultaUsuarios" Text="Consultar Todos" Clicked="btnConsultaUsuarios_Clicked_1"></Button>
-            <ListView x:Name="listListadeMascotas" >
+
+                <Frame BackgroundColor="CornflowerBlue"  Padding="0.5" CornerRadius="0" >
+                    <Image Source="logopatitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
+                </Frame>
+                <Label HorizontalTextAlignment="Center" Text="Mis Mascotas" FontSize="Large" FontAttributes="Bold"></Label>
+           
+            
+                    <CollectionView x:Name="cllvanimales" ItemsSource="{Binding _post}" SelectionMode="Single" SelectionChanged="cllvanimales_SelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="5"
+                                   CornerRadius="5"
+                                   IsClippedToBounds="False">
+
+                                <Grid HeightRequest="100">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                        <ColumnDefinition Width=".7*"></ColumnDefinition>
+                                        
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height=".5*"></RowDefinition>
+                                        <RowDefinition Height=".5*"></RowDefinition>
+
+                                    </Grid.RowDefinitions>
+
+                                    <Image Grid.RowSpan="2" Source="animal.png"></Image>
+                                     <Label Text="{Binding nombre}" Grid.Column="1" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" >
+                                         
+                                      </Label>
+                                    
+                                        
+                                </Grid>
+                           
+                            </Frame>
+                        </DataTemplate>
+                        
+                        
+                    </CollectionView.ItemTemplate>
+
+
+
+                </CollectionView>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!--<ListView x:Name="listListadeMascotas" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -28,7 +77,7 @@
 
 
 
-            </ListView>
+            </ListView>-->
         </StackLayout>
 
         </ScrollView>

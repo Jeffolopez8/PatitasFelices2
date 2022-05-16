@@ -27,7 +27,7 @@ namespace PatitasFelices2
 
         }
 
-        private async void AbreRegistro()
+        private void AbreRegistro()
         {
             
         }

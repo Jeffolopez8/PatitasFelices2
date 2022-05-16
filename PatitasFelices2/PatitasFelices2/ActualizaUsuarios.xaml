@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PatitasFelices2.RegistroUsuario"
-             NavigationPage.HasNavigationBar="true">
+             x:Class="PatitasFelices2.ActualizaUsuarios">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -13,13 +12,13 @@
                 <ProgressBar x:Name="progress" Progress=".0"/>
                 <Label x:Name="lbl_progress" Text="0%" FontSize="Large"/>
                 <Grid>
-                    <Label x:Name="lbl_principal1" Text="BIENVENIDO REGISTRESE" FontSize="Medium"/>
-                    
-                    
+                    <Label x:Name="lbl_principal1" Text="Usuario" FontSize="Medium"/>
+
+
                 </Grid>
                 <Frame>
                     <StackLayout>
-                       
+
                         <Entry x:Name="lbl_nombre" Placeholder="Ingrese su nombre" FontSize="Medium" Completed="lbl_nombre_Completed" TextChanged="lbl_nombre_TextChanged"></Entry>
                         <Entry x:Name="lbl_apellido" Placeholder="Ingrese su apellido" FontSize="Medium" Completed="lbl_apellido_Completed" TextChanged="lbl_apellido_TextChanged"></Entry>
                         <Entry x:Name="lbl_domicilio" Placeholder="Ingrese su domicilio" FontSize="Medium" Completed="lbl_domicilio_Completed" TextChanged="lbl_domicilio_TextChanged"></Entry>
@@ -29,16 +28,23 @@
                         <Entry x:Name="lbl_password" Placeholder="Ingrese su contraseña" FontSize="Medium" IsPassword="True" Completed="lbl_password_Completed"></Entry>
                         <Entry x:Name="lbl_password2" Placeholder="Ingrese nuevamente su contraseña" FontSize="Medium" IsPassword="True" Completed="lbl_password2_Completed"></Entry>
                         <Grid ColumnDefinitions="auto,*" >
-                            <CheckBox x:Name="cbox_terminos" IsChecked="False" CheckedChanged="cbox_terminos_CheckedChanged" Grid.Column="0"></CheckBox>
-                            <Label Text="Acepto los terminos y condiciones" Grid.Column="1" VerticalOptions="Center"></Label>
+                            <!-- <CheckBox x:Name="cbox_terminos" IsChecked="False" CheckedChanged="cbox_terminos_CheckedChanged" Grid.Column="0"></CheckBox>
+                            <Label Text="Acepto los terminos y condiciones" Grid.Column="1" VerticalOptions="Center"></Label>-->
                         </Grid>
 
                     </StackLayout>
                 </Frame>
-                <Button x:Name="btn_registrar" Text="REGISTRAR" FontSize="Large"
-                    Clicked="btn_registrar_Clicked" CornerRadius="10" IsEnabled="False"
+                <Button x:Name="btn_actualizar" Text="Actualizar" FontSize="Large"
+                    Clicked="btn_actualizar_Clicked" CornerRadius="10" IsEnabled="True"
                     TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
                     Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+
+                <Button x:Name="btn_eliminar" Text="Eliminar" FontSize="Large"
+                    Clicked="btn_eliminar_Clicked" CornerRadius="10" IsEnabled="True"
+                    TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
+                    Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+                
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
