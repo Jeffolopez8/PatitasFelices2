@@ -12,9 +12,10 @@ namespace PatitasFelices2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InformacionMascota : ContentPage
     {
-        public InformacionMascota()
+        public InformacionMascota(String id)
         {
             InitializeComponent();
+            txt_CodigoMascota.Text = id;
         }
 
         private void lbl_NombreMascotas_Completed(object sender, EventArgs e)

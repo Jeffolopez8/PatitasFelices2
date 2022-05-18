@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PatitasFelices2.WS;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,7 +20,10 @@ namespace PatitasFelices2
 
         private const string Url = "http://200.12.169.100/patitas/mascota/postbusqueda.php?";
         private readonly HttpClient client = new HttpClient();
-        private ObservableCollection<PatitasFelices2.WS.Usuarios> _post;
+        private ObservableCollection<PatitasFelices2.WS.Animales> _post;
+        int dato = 1;
+        private const string Url2 = "http://200.12.169.100/patitas/mascota/post3.php?codigoUsuario=3";
+
 
 
         public ListadoMascotas()
@@ -32,10 +36,8 @@ namespace PatitasFelices2
 
        public async void animalesporusuario()
         {
-
-            int stParams = 1;
-
-            HttpResponseMessage response = await client.GetAsync($"{Url}{stParams}");
+                       
+            HttpResponseMessage response = await client.GetAsync($"{Url2}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -43,8 +45,8 @@ namespace PatitasFelices2
 
                 //var content = await client.GetStringAsync($"{Url}");
                 
-                List<PatitasFelices2.WS.Usuarios> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Usuarios>>(json);
-                _post = new ObservableCollection<PatitasFelices2.WS.Usuarios>(posts);
+                List<PatitasFelices2.WS.Animales> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Animales>>(json);
+                _post = new ObservableCollection<PatitasFelices2.WS.Animales>(posts);
 
                 cllvanimales.ItemsSource = _post;
 
@@ -52,44 +54,16 @@ namespace PatitasFelices2
             }
             else
             {
-                var content = await client.GetStringAsync($"{Url}");
+                var content = await client.GetStringAsync($"{Url2}");
 
-                List<PatitasFelices2.WS.Usuarios> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Usuarios>>(content);
-                _post = new ObservableCollection<PatitasFelices2.WS.Usuarios>(posts);
+                List<PatitasFelices2.WS.Animales> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Animales>>(content);
+                _post = new ObservableCollection<PatitasFelices2.WS.Animales>(posts);
             }
 
 
            
 
-          
-
-            //listListadeMascotas.ItemsSource = _post;
-
-            /*Uri urlBase = new Uri("http://200.12.169.100");
-            string requestUri = "/patitas/animales/post.php?";
-            var client = new HttpClient();
-            client.BaseAddress = urlBase;
-            int stParams = 1;
-
-            HttpResponseMessage response = await client.GetAsync($"{requestUri}{stParams}");
-
-            if (response.IsSuccessStatusCode)
-            {
-                var json = await response.Content.ReadAsStringAsync();
-
-                return JsonConvert.DeserializeObject<T>(json);
-            }
-            else
-            {
-                return default(T);
-            }*/
-
-
-
-
-
-
-
+       
         }
 
 
@@ -97,8 +71,8 @@ namespace PatitasFelices2
         {
             string stParams = "2";
             var content = await client.GetStringAsync($"{Url}{stParams}");
-            List<PatitasFelices2.WS.Usuarios> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Usuarios>>(content);
-            _post = new ObservableCollection<PatitasFelices2.WS.Usuarios>(posts);
+            List<PatitasFelices2.WS.Animales> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Animales>>(content);
+            _post = new ObservableCollection<PatitasFelices2.WS.Animales>(posts);
         }
 
         private  void btnConsultaUsuarios_Clicked_1(object sender, EventArgs e)
@@ -108,7 +82,22 @@ namespace PatitasFelices2
 
         private async void cllvanimales_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            await Navigation.PushAsync(new InformacionMascota());
+
+            
+            var obj = (Animales)e.CurrentSelection;
+            var item = obj.codigo.ToString();
+           
+
+            await Navigation.PushAsync(new InformacionMascota(item));
+        }
+
+        private async void cllvanimales_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var obj = (Animales)e.SelectedItem;
+            var item = obj.codigo.ToString();
+
+
+            await Navigation.PushAsync(new InformacionMascota(item));
         }
     }
 }

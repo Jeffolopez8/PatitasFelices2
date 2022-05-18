@@ -16,6 +16,7 @@
                 </Grid>
                 <Frame>
                     <StackLayout>
+                        <Entry x:Name="txt_CodigoMascota" ></Entry>
                         <Entry x:Name="lbl_NombreMascotas" Placeholder="Ingrese el nombre de la Mascota" FontSize="Medium" Completed="lbl_NombreMascotas_Completed"  TextChanged="lbl_NombreMascotas_TextChanged"></Entry>
                         <Entry x:Name="lbl_razas" Placeholder="Ingrese la raza" FontSize="Medium" Completed="lbl_razas_Completed"  TextChanged="lbl_razas_TextChanged"></Entry>
                         <Label Text="Fecha de Registro de Mascota"></Label>

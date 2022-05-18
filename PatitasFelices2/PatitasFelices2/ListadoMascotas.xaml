@@ -32,11 +32,11 @@
                                     </Grid.RowDefinitions>
 
                                     <Image Grid.RowSpan="2" Source="animal.png"></Image>
-                                     <Label Text="{Binding nombre}" Grid.Column="1" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" >
-                                         
-                                      </Label>
+                                    <Label Text="{Binding nombre}" Grid.Column="1" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" ></Label>
+                                    <!--<Label Text="{Binding codigo}" Grid.Column="2" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" ></Label>-->
                                     
-                                        
+
+
                                 </Grid>
                            
                             </Frame>
