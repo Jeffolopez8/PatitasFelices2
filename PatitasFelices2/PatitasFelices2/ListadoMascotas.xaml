@@ -10,9 +10,12 @@
                     <Image Source="logopatitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
                 </Frame>
                 <Label HorizontalTextAlignment="Center" Text="Mis Mascotas" FontSize="Large" FontAttributes="Bold"></Label>
-           
+                <Button x:Name="btnNuevaMascota" Text="Nueva Mascota" Clicked="btnNuevaMascota_Clicked" WidthRequest="35" HeightRequest="40" CornerRadius="100" ></Button>
+
+                <!-- Con CollectionView-->
             
-                    <CollectionView x:Name="cllvanimales" ItemsSource="{Binding _post}" SelectionMode="Single" SelectionChanged="cllvanimales_SelectionChanged">
+            
+               <!--        <CollectionView x:Name="cllvanimales" ItemsSource="{Binding _post}" SelectionMode="Single" SelectedItem="{Binding}" >
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Frame Padding="5"
@@ -23,7 +26,7 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width=".3*"></ColumnDefinition>
                                         <ColumnDefinition Width=".7*"></ColumnDefinition>
-                                        
+
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height=".5*"></RowDefinition>
@@ -33,52 +36,49 @@
 
                                     <Image Grid.RowSpan="2" Source="animal.png"></Image>
                                     <Label Text="{Binding nombre}" Grid.Column="1" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" ></Label>
-                                    <!--<Label Text="{Binding codigo}" Grid.Column="2" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" ></Label>-->
-                                    
+                                    <Label Text="{Binding codigo}" Grid.Column="2" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" ></Label>
+
 
 
                                 </Grid>
-                           
+
                             </Frame>
                         </DataTemplate>
-                        
-                        
+
+
                     </CollectionView.ItemTemplate>
 
 
 
                 </CollectionView>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <!--<ListView x:Name="listListadeMascotas" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
 
-                            <StackLayout>
-                                <Label x:Name="lblMascotalista" Text="{Binding nombre}" ></Label>
-                                                              
-
-                            </StackLayout>
-                        </ViewCell>
-
-                    </DataTemplate>
+                                                                   -->
 
 
-                </ListView.ItemTemplate>
+
+                <!-- Con List View -->
 
 
 
 
-            </ListView>-->
-        </StackLayout>
+                <ListView x:Name="cllvanimales" ItemsSource="{Binding _post}" SelectionMode="Single"  ItemSelected="cllvanimales_ItemSelected_1" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+
+                            <TextCell Text="{Binding nombre}"></TextCell>
+
+
+                        </DataTemplate>
+
+
+                    </ListView.ItemTemplate>
+
+
+
+                </ListView>
+
+
+            </StackLayout>
 
         </ScrollView>
     </ContentPage.Content>

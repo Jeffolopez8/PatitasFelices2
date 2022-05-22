@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PatitasFelices2.WS
 {
-    internal class Animales
+    public class Animales
     {
         public int codigo { get; set; }
         public string nombre { get; set; }

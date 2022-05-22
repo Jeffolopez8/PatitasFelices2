@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatitasFelices2.RegistroMascota">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame BackgroundColor="Blue"  Padding="0.5" CornerRadius="0" >
+                    <Image Source="patitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
+                </Frame>
+
+                <Label x:Name="lbl_principal" Text="REGISTRO DE MASCOTAS" FontSize="Medium"/>
+                <Entry x:Name="txtCodigoUsuario" IsVisible="false"></Entry>
+                <ProgressBar x:Name="progress" Progress=".0"/>
+
+
+
+                <Grid>
+                    <Label x:Name="lbl_progress" Text="0%" FontSize="Large"/>
+                    <Switch x:Name="sw_example"></Switch>
+
+
+                </Grid>
+                <Frame>
+                    <StackLayout>
+                        <Entry x:Name="lbl_NombreMascota" Placeholder="Ingrese el nombre de la Mascota" FontSize="Medium" Completed="lbl_NombreMascota_Completed" TextChanged="lbl_NombreMascota_TextChanged"></Entry>
+                        <Entry x:Name="lbl_raza" Placeholder="Ingrese la raza" FontSize="Medium" Completed="lbl_raza_Completed" TextChanged="lbl_raza_TextChanged"></Entry>
+                        <Label Text="Fecha de Registro de Mascota"></Label>
+                      
+                        <DatePicker x:Name="dp_FechaRegistro"></DatePicker>
+
+
+                        <Grid ColumnDefinitions="auto,*" >
+                        </Grid>
+
+                    </StackLayout>
+                </Frame>
+                <Button x:Name="btn_registrarMacota" Text="Guardar" FontSize="Large"
+                    Clicked="btn_registrarMacota_Clicked"  CornerRadius="10" IsEnabled="True"
+                    TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
+                    Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
