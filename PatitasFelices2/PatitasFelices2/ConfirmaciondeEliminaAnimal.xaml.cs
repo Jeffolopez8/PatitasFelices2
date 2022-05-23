@@ -13,9 +13,9 @@ namespace PatitasFelices2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ConfirmaciondeEliminaAnimal : ContentPage
     {
-        public ConfirmaciondeEliminaAnimal(string codigomascota)
+        public ConfirmaciondeEliminaAnimal()
         {
-            txtCodigomascota.Text = codigomascota;
+           
             InitializeComponent();
         }
 
@@ -26,9 +26,9 @@ namespace PatitasFelices2
                 WebClient cliente = new WebClient();
                 var parametros = new System.Collections.Specialized.NameValueCollection();
 
-                parametros.Add("codigo", txtCodigomascota.Text);
+                parametros.Add("codigo", "7");
 
-                cliente.UploadValues("http://200.12.169.100/patitas/mascota/post.php", "DELETE", parametros);
+                cliente.UploadValues("http://200.12.169.100/patitas/mascota/borrarmascota.php?codigo="+txtCodigomascota.Text,parametros);
 
                 await DisplayAlert("Alerta", "Usuario Eliminado Correctamente", "Ok");
 

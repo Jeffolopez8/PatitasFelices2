@@ -20,7 +20,7 @@ namespace PatitasFelices2
             lbl_principal.Text = "Información de: " + nombre;
             lbl_NombreMascotas.Text = nombre;
             lbl_razas.Text = Convert.ToString (raza);
-            dp_FechaRegistro.Date = Convert.ToDateTime(fecha);
+           // dp_FechaRegistro.Date = Convert.ToDateTime(fecha);
         }
 
         private void lbl_NombreMascotas_Completed(object sender, EventArgs e)
@@ -56,11 +56,13 @@ namespace PatitasFelices2
                 parametros.Add("fechaRegistro", Convert.ToString(dp_FechaRegistro.Date));
               
 
-                cliente.UploadValues("http://200.12.169.100/patitas/mascota/post.php", "PUT", parametros);
+                cliente.UploadValues("http://200.12.169.100/patitas/mascota/actualizamascota.php?codigo="+txt_CodigoMascota.Text+"&nombre="+lbl_NombreMascotas.Text+"&raza="+lbl_razas.Text+"&fecharegistro="+Convert.ToString(dp_FechaRegistro.Date), "PUT", parametros);
 
 
 
                 await DisplayAlert("Alerta", "Usuario Actualizado Correctamente", "Ok");
+
+                await Navigation.PushAsync(new ListadoMascotas());
 
 
             }
@@ -75,7 +77,9 @@ namespace PatitasFelices2
 
         private async void btn_Eliminar_Clicked(object sender, EventArgs e)
         {
-            
+
+            string id = txt_CodigoMascota.Text;
+            await Navigation.PushAsync(new ConfirmaciondeEliminaAnimal());
         }
     }
 }

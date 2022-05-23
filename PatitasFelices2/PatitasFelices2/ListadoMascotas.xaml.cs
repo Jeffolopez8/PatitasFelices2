@@ -77,7 +77,7 @@ namespace PatitasFelices2
            
         }
 
-        private async void cllvanimales_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private  void cllvanimales_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
 
