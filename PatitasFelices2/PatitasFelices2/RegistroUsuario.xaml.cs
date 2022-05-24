@@ -25,21 +25,26 @@ namespace PatitasFelices2
             string nombre = lbl_nombre.Text.ToString();
             string cadena = $"Bienvenido  {nombre}, llena tus datos";
             lbl_principal1.Text = cadena;
+            progress.ProgressTo(.10, 250, Easing.Linear);
+            lbl_progress.Text = "10%";
         }
 
         private void lbl_apellido_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            progress.ProgressTo(.20, 250, Easing.Linear);
+            lbl_progress.Text = "20%";
         }
 
         private void lbl_domicilio_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            progress.ProgressTo(.30, 250, Easing.Linear);
+            lbl_progress.Text = "30%";
         }
 
         private void lbl_telefono_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            progress.ProgressTo(.40, 250, Easing.Linear);
+            lbl_progress.Text = "40%";
         }
 
         private void lbl_usuario_Completed(object sender, EventArgs e)

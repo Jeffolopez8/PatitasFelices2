@@ -18,8 +18,9 @@ namespace PatitasFelices2
         public QRMascota(string id, string nombre )
         {
             InitializeComponent();
+            lblNombreMascota.Text="Código Qr de: "+nombre;
             txtValorQR.Text = "*Codigo:"+id +"*Nombre: "+ nombre;
-            btnGenerarCodigo.IsVisible = false;
+           
             generaAutoQR();
 
         }
@@ -37,6 +38,8 @@ namespace PatitasFelices2
             qr.BarcodeOptions.Height = 500;
             qr.BarcodeValue = txtValorQR.Text;
             stkQR.Children.Add(qr);
+
+            
 
         }
 

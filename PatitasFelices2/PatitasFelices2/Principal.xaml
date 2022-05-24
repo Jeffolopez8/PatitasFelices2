@@ -32,7 +32,7 @@
                     <Image Grid.Row="0" Source="perroyamo.png" WidthRequest="200" HeightRequest="150" Margin="0,30,0,20"></Image>
                     <Button x:Name="btnMisMascotas" Text="Mis Mascotas" FontSize="Large" Padding="0" BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60" Clicked="btnMisMascotas_Clicked" ></Button>
                         
-                    <Image Grid.Row="0" Source="usuario.png" WidthRequest="200" HeightRequest="150" Margin="0,30,0,20"></Image>
+                    <Image Grid.Row="0" Source="perfilusuario1.jpg" WidthRequest="200" HeightRequest="150" Margin="0,30,0,20"></Image>
                     <Button x:Name="btnMiPerfil" Text="Mi Perfil" FontSize="Large" Padding="0" BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60" Clicked="btnMiPerfil_Clicked" ></Button>
 
 

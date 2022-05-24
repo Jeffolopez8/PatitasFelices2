@@ -18,6 +18,8 @@ namespace PatitasFelices2
            
             InitializeComponent();
             txtCodigomascota.Text = Id;
+
+            lblMascota.Text = "¿Está seguro de eliminar esta mascota?";
         }
 
         private async void btnAceptar_Clicked(object sender, EventArgs e)

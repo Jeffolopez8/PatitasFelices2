@@ -26,7 +26,7 @@
                     <Image Grid.Row="0" Source="logopatitasfelices.png" WidthRequest="100" HeightRequest="100" Margin="0,10,0,10"></Image>
                     <StackLayout Grid.Row="1" Padding="10,20">
                         <Image Grid.Row="0" Source="qrmanos.jpg" WidthRequest="200" HeightRequest="150" Margin="0,30,0,20"></Image>
-                        <Label Text="Consulte la Información de la mascota, mediante un lector de códigos QR. (El código QR, se encuentra en la parte de atrás de la placa informativa de la mascota)" TextColor="Red" FontSize="Small"></Label>
+                        <Label Text="Consulte la Información de la mascota, dando click en el botón. (El código QR, se encuentra en la parte de atrás de la placa informativa de la mascota, o puede obtenerlo en la información de la mascota)" TextColor="CadetBlue" BackgroundColor="Azure" FontSize="Small" FontAttributes="Bold"></Label>
                         <Button x:Name="btnConsultarQr" Text="Consultar Código QR" FontSize="Large" Padding="0" BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60" Clicked="btnConsultarQr_Clicked" ></Button>
 
                     </StackLayout>

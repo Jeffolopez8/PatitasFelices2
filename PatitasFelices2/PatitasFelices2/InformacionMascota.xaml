@@ -4,21 +4,26 @@
              x:Class="PatitasFelices2.InformacionMascota">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Frame BackgroundColor="Blue"  Padding="0.5" CornerRadius="0" >
-                    <Image Source="patitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
+            <Grid>
+                <Image Source="fondo1.jpg" Aspect="Fill"></Image>
+
+                <StackLayout>
+                    <Image Source="logopatitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
+                    <Frame BackgroundColor="Transparent"  Padding="0.5" CornerRadius="0" >
+                   
                 </Frame>
 
-                <Label x:Name="lbl_principal" FontSize="Large" TextColor="ForestGreen"/>
+                <Label x:Name="lbl_principal" FontSize="Large" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
+                <Image Source="perfilusuario3.jpeg" HeightRequest="150" WidthRequest="200"/>
 
 
-                <Grid>
-                </Grid>
-                <Frame>
-                    <StackLayout>
-                        <Entry x:Name="txt_CodigoMascota" IsVisible="false" ></Entry>
-                        <Entry x:Name="lbl_NombreMascotas" Placeholder="Ingrese el nombre de la Mascota" FontSize="Medium" Completed="lbl_NombreMascotas_Completed"  TextChanged="lbl_NombreMascotas_TextChanged"></Entry>
-                        <Entry x:Name="lbl_razas" Placeholder="Ingrese la raza" FontSize="Medium" Completed="lbl_razas_Completed"  TextChanged="lbl_razas_TextChanged"></Entry>
+                    <Frame  BackgroundColor="Transparent">
+                    <StackLayout BackgroundColor="Transparent">
+                            <Entry x:Name="txt_CodigoMascota" IsVisible="false" ></Entry>
+                            <Label Text="Nombre"></Label>
+                            <Entry x:Name="lbl_NombreMascotas" Placeholder="Ingrese el nombre de la Mascota" FontSize="Medium" Completed="lbl_NombreMascotas_Completed"  TextChanged="lbl_NombreMascotas_TextChanged"></Entry>
+                            <Label Text="Raza"></Label>
+                            <Entry x:Name="lbl_razas" Placeholder="Ingrese la raza" FontSize="Medium" Completed="lbl_razas_Completed"  TextChanged="lbl_razas_TextChanged"></Entry>
                         <Label Text="Fecha de Registro de Mascota"></Label>
                         <DatePicker x:Name="dp_FechaRegistro"></DatePicker>
 
@@ -29,22 +34,20 @@
                 </Frame>
 
 
-                <Button x:Name="btn_CodQR" Text="Generar Qr de la Mascota" FontSize="Large"
-                    Clicked="btn_CodQR_Clicked"  CornerRadius="10" IsEnabled="True"
-                    TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
-                    Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+                <Button x:Name="btn_CodQR" Text="Generar Qr de la Mascota" 
+                    Clicked="btn_CodQR_Clicked"  IsEnabled="True"
+                   FontSize="Medium" Padding="0" BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60"></Button>
 
 
-                <Button x:Name="btn_Actualizar" Text="Actualizar Mascota" FontSize="Large"
-                    Clicked="btn_Actualizar_Clicked"  CornerRadius="10" IsEnabled="True"
-                    TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
-                    Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+                <Button x:Name="btn_Actualizar" Text="Actualizar Mascota" 
+                    Clicked="btn_Actualizar_Clicked"  IsEnabled="True"
+                    FontSize="Medium" Padding="0" BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60"></Button>
 
-                <Button x:Name="btn_Eliminar" Text="Eliminar" FontSize="Large"
-                    Clicked="btn_Eliminar_Clicked"  CornerRadius="10" IsEnabled="True"
-                    TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
-                    Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+                <Button x:Name="btn_Eliminar" Text="Eliminar" 
+                    Clicked="btn_Eliminar_Clicked"   IsEnabled="True"
+                    FontSize="Medium" Padding="0" BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60"></Button>
             </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

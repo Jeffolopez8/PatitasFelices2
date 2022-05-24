@@ -5,8 +5,10 @@
              NavigationPage.HasNavigationBar="true">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Frame BackgroundColor="Blue"  Padding="0.5" CornerRadius="0" >
+            <Grid>
+                <Image Source="fondo1.jpg" Aspect="Fill"></Image>
+                <StackLayout>
+                <Frame BackgroundColor="Transparent"  Padding="0.5" CornerRadius="0" >
                     <Image Source="logopatitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
                 </Frame>
 
@@ -17,10 +19,10 @@
                     
                     
                 </Grid>
-                <Frame>
-                    <StackLayout>
+                <Frame BackgroundColor="Transparent">
+                    <StackLayout BackgroundColor="Transparent">
                        
-                        <Entry x:Name="lbl_nombre" Placeholder="Ingrese su nombre" FontSize="Medium" Completed="lbl_nombre_Completed" TextChanged="lbl_nombre_TextChanged"></Entry>
+                        <Entry x:Name="lbl_nombre" Placeholder="Ingrese su nombre" FontSize="Medium" Completed="lbl_nombre_Completed" TextChanged="lbl_nombre_TextChanged" BackgroundColor="Transparent"></Entry>
                         <Entry x:Name="lbl_apellido" Placeholder="Ingrese su apellido" FontSize="Medium" Completed="lbl_apellido_Completed" TextChanged="lbl_apellido_TextChanged"></Entry>
                         <Entry x:Name="lbl_domicilio" Placeholder="Ingrese su domicilio" FontSize="Medium" Completed="lbl_domicilio_Completed" TextChanged="lbl_domicilio_TextChanged"></Entry>
                         <Entry x:Name="lbl_telefono" Placeholder="Ingrese su telefono" FontSize="Medium" Completed="lbl_telefono_Completed" TextChanged="lbl_telefono_TextChanged" Keyboard="Numeric"></Entry>
@@ -35,11 +37,11 @@
 
                     </StackLayout>
                 </Frame>
-                <Button x:Name="btn_registrar" Text="REGISTRAR" FontSize="Large"
-                    Clicked="btn_registrar_Clicked" CornerRadius="10" IsEnabled="False"
-                    TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
-                    Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+                <Button x:Name="btn_registrar" Text="REGISTRAR" 
+                    Clicked="btn_registrar_Clicked"  IsEnabled="False"
+                    FontSize="Large" Padding="0" BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60"></Button>
             </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
