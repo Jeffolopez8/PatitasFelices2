@@ -36,30 +36,38 @@ namespace PatitasFelices2
 
        public async void animalesporusuario()
         {
-                       
-            HttpResponseMessage response = await client.GetAsync($"{Url2}");
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                var json = await response.Content.ReadAsStringAsync();
+                HttpResponseMessage response = await client.GetAsync($"{Url2}");
 
-                //var content = await client.GetStringAsync($"{Url}");
-                
-                List<PatitasFelices2.WS.Animales> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Animales>>(json);
-                _post = new ObservableCollection<PatitasFelices2.WS.Animales>(posts);
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
 
-                cllvanimales.ItemsSource = _post;
+                    //var content = await client.GetStringAsync($"{Url2}");
 
+                    List<PatitasFelices2.WS.Animales> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Animales>>(json);
+                    _post = new ObservableCollection<PatitasFelices2.WS.Animales>(posts);
+
+                    cllvanimales.ItemsSource = _post;
+
+
+                }
+                else
+                {
+                    var content = await client.GetStringAsync($"{Url2}");
+
+                    List<PatitasFelices2.WS.Animales> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Animales>>(content);
+                    _post = new ObservableCollection<PatitasFelices2.WS.Animales>(posts);
+                }
 
             }
-            else
+            catch (Exception e)
             {
-                var content = await client.GetStringAsync($"{Url2}");
 
-                List<PatitasFelices2.WS.Animales> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Animales>>(content);
-                _post = new ObservableCollection<PatitasFelices2.WS.Animales>(posts);
-            }
-
+                await DisplayAlert ("Alerta",e.Message,"Ok");
+            }         
+           
 
            
 

@@ -60,7 +60,7 @@ namespace PatitasFelices2
 
 
 
-                await DisplayAlert("Alerta", "Usuario Actualizado Correctamente", "Ok");
+                await DisplayAlert("Alerta", "Mascota Actualizada Correctamente", "Ok");
 
                 await Navigation.PushAsync(new ListadoMascotas());
 
@@ -69,7 +69,7 @@ namespace PatitasFelices2
             catch (Exception ex)
             {
 
-                await DisplayAlert("Error", "Usuario No Actualizado" + ex.Message, "Ok");
+                await DisplayAlert("Error", "Mascota No Actualizada" + ex.Message, "Ok");
             }
 
 
@@ -79,7 +79,12 @@ namespace PatitasFelices2
         {
 
             string id = txt_CodigoMascota.Text;
-            await Navigation.PushAsync(new ConfirmaciondeEliminaAnimal());
+            await Navigation.PushAsync(new ConfirmaciondeEliminaAnimal(id));
+        }
+
+        private async void btn_CodQR_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new QRMascota(txt_CodigoMascota.Text, lbl_NombreMascotas.Text));
         }
     }
 }

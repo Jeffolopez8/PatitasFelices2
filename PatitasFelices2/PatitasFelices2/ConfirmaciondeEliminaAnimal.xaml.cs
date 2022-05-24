@@ -13,10 +13,11 @@ namespace PatitasFelices2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ConfirmaciondeEliminaAnimal : ContentPage
     {
-        public ConfirmaciondeEliminaAnimal()
+        public ConfirmaciondeEliminaAnimal(String Id)
         {
            
             InitializeComponent();
+            txtCodigomascota.Text = Id;
         }
 
         private async void btnAceptar_Clicked(object sender, EventArgs e)
@@ -26,11 +27,11 @@ namespace PatitasFelices2
                 WebClient cliente = new WebClient();
                 var parametros = new System.Collections.Specialized.NameValueCollection();
 
-                parametros.Add("codigo", "7");
+                parametros.Add("codigo", "");
 
                 cliente.UploadValues("http://200.12.169.100/patitas/mascota/borrarmascota.php?codigo="+txtCodigomascota.Text,parametros);
 
-                await DisplayAlert("Alerta", "Usuario Eliminado Correctamente", "Ok");
+                await DisplayAlert("Alerta", "Mascota Eliminada Correctamente", "Ok");
 
                 await Navigation.PushAsync(new ListadoMascotas());
 

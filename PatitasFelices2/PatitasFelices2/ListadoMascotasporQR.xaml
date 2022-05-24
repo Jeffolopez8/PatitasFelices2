@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatitasFelices2.ListadoMascotasporQR">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <Frame BackgroundColor="CornflowerBlue"  Padding="0.5" CornerRadius="0" >
+                    <Image Source="logopatitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
+                </Frame>
+                <Label HorizontalTextAlignment="Center" Text="Mis Mascotas" FontSize="Large" FontAttributes="Bold"></Label>
+                <!--  <Button x:Name="btnNuevaMascota" Text="Nueva Mascota" Clicked="btnNuevaMascota_Clicked" WidthRequest="35" HeightRequest="40" CornerRadius="100" ></Button>-->
+
+                <!-- Con CollectionView-->
+
+
+                <!--        <CollectionView x:Name="cllvanimales" ItemsSource="{Binding _post}" SelectionMode="Single" SelectedItem="{Binding}" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="5"
+                                   CornerRadius="5"
+                                   IsClippedToBounds="False">
+
+                                <Grid HeightRequest="100">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                        <ColumnDefinition Width=".7*"></ColumnDefinition>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height=".5*"></RowDefinition>
+                                        <RowDefinition Height=".5*"></RowDefinition>
+
+                                    </Grid.RowDefinitions>
+
+                                    <Image Grid.RowSpan="2" Source="animal.png"></Image>
+                                    <Label Text="{Binding nombre}" Grid.Column="1" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" ></Label>
+                                    <Label Text="{Binding codigo}" Grid.Column="2" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" ></Label>
+
+
+
+                                </Grid>
+
+                            </Frame>
+                        </DataTemplate>
+
+
+                    </CollectionView.ItemTemplate>
+
+
+
+                </CollectionView>
+
+                                                                   -->
+
+
+
+                <!-- Con List View -->
+
+
+
+                <Entry x:Name="txtcodigomascota" IsVisible="false"></Entry>
+                <ListView x:Name="cllvanimales" ItemsSource="{Binding _post}" SelectionMode="Single"  ItemSelected="cllvanimales_ItemSelected" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+
+                            <TextCell Text="{Binding nombre}"></TextCell>
+
+
+                        </DataTemplate>
+
+
+                    </ListView.ItemTemplate>
+
+
+
+                </ListView>
+
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

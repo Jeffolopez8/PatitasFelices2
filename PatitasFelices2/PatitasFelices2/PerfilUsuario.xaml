@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatitasFelices2.PerfilUsuario"
+             xmlns:local1="clr-namespace:PatitasFelices2.WS">
+
+    <ContentPage.BindingContext>
+
+        <local1:Usuarios/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame BackgroundColor="Blue"  Padding="0.5" CornerRadius="0" >
+                    <Image Source="patitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
+                </Frame>
+
+                <Label x:Name="lbl_principal" Text="INFORMACION DE USUARIOS" FontSize="Medium"/>
+
+
+                <Grid>
+                </Grid>
+                <Frame>
+                    <StackLayout>
+                        <Entry x:Name="lbl_codigo" Placeholder="Ingrese su codigo" FontSize="Medium"     Keyboard="Numeric" Text="{Binding codigo}"></Entry>
+                        <Entry x:Name="lbl_nombre" Placeholder="Ingrese su nombre" FontSize="Medium"  Text="{Binding nombre}"></Entry>
+                        <Entry x:Name="lbl_apellido" Placeholder="Ingrese su apellido" FontSize="Medium" ></Entry>
+                        <Entry x:Name="lbl_domicilio" Placeholder="Ingrese su domicilio" FontSize="Medium" ></Entry>
+                        <Entry x:Name="lbl_telefono" Placeholder="Ingrese su telefono" FontSize="Medium"   Keyboard="Numeric"></Entry>
+                        <Entry x:Name="lbl_correo" Placeholder="Email" Text="{Binding Email}" FontSize="Medium"  ></Entry>
+                        <Entry x:Name="lbl_usuario" Placeholder="Ingrese su usuario" FontSize="Medium" ></Entry>
+                       
+                        <Button x:Name="btnCambioContrasena" Text="Cambiar Contraseña" Clicked="btnCambioContrasena_Clicked"></Button>
+                       
+                        <Entry x:Name="lbl_password" Placeholder="Ingrese su nueva  contraseña" IsVisible="false" FontSize="Medium" IsPassword="True" ></Entry>
+                        <Entry x:Name="lbl_password2" Placeholder="Ingrese nuevamente su nueva contraseña" IsVisible="false" FontSize="Medium" IsPassword="True" ></Entry>
+                        
+
+                        <Grid ColumnDefinitions="auto,*" >
+                        </Grid>
+
+                    </StackLayout>
+                </Frame>
+                <Button x:Name="btn_ActualizarUsuario" Text="ACTUALIZAR INFORMACION" FontSize="Large"
+                    Clicked="btn_ActualizarUsuario_Clicked"  CornerRadius="10" IsEnabled="True"
+                    TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
+                    Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+
+                <Button x:Name="btn_RegresarU" Text="REGRESAR MENU" FontSize="Large"
+                    Clicked ="btn_RegresarU_Clicked"  CornerRadius="10" IsEnabled="True"
+                    TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
+                    Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

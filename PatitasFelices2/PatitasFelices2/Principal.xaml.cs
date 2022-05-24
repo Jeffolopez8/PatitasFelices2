@@ -24,7 +24,9 @@ namespace PatitasFelices2
 
         private async void btnMiPerfil_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ActualizaUsuarios());
+
+            String codigousuario = "1";
+            await Navigation.PushAsync(new PerfilUsuario(codigousuario));
         }
     }
 }

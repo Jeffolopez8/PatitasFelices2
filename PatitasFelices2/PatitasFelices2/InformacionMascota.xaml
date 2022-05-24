@@ -27,7 +27,15 @@
 
                     </StackLayout>
                 </Frame>
-                <Button x:Name="btn_Actualizar" Text="ACTUALIZAR INFORMACION" FontSize="Large"
+
+
+                <Button x:Name="btn_CodQR" Text="Generar Qr de la Mascota" FontSize="Large"
+                    Clicked="btn_CodQR_Clicked"  CornerRadius="10" IsEnabled="True"
+                    TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
+                    Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+
+
+                <Button x:Name="btn_Actualizar" Text="Actualizar Mascota" FontSize="Large"
                     Clicked="btn_Actualizar_Clicked"  CornerRadius="10" IsEnabled="True"
                     TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
                     Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
