@@ -47,32 +47,46 @@ namespace PatitasFelices2
 
                     string codigoanimal = text;
 
-                    string Url2 = "http://200.12.169.100/patitas/mascota/postbusqueda.php?codigo=" + codigoanimal;
+                    int codigoverificado = Convert.ToInt32(codigoanimal);
 
-                    HttpResponseMessage response = await client.GetAsync($"{Url2}");
-
-                    if (response.IsSuccessStatusCode)
+                    if (codigoverificado > 0)
                     {
+                        string Url2 = "http://200.12.169.100/patitas/mascota/postbusqueda.php?codigo=" + codigoanimal;
 
-                      
-                        var json = await response.Content.ReadAsStringAsync();
+                        HttpResponseMessage response = await client.GetAsync($"{Url2}");
 
-                        var content = await client.GetStringAsync($"{Url2}");
-
-                      
-                        //IEnumerable<PatitasFelices2.WS.Animales> posts = JsonConvert.DeserializeObject<IEnumerable<PatitasFelices2.WS.Animales>>(json);
-
-                        if (content.Count() > 0)
+                        if (response.IsSuccessStatusCode)
                         {
-                           await Navigation.PushAsync(new ListadoMascotasporQR(codigoanimal));
-                             
+
+
+                            var json = await response.Content.ReadAsStringAsync();
+
+                            var content = await client.GetStringAsync($"{Url2}");
+
+
+                            //IEnumerable<PatitasFelices2.WS.Animales> posts = JsonConvert.DeserializeObject<IEnumerable<PatitasFelices2.WS.Animales>>(json);
+
+                            if (content.Count() > 0)
+                            {
+                                await Navigation.PushAsync(new ListadoMascotasporQR(codigoanimal));
+
+                            }
+
+                            else
+                            {
+                                await DisplayAlert("Alerta", "El código no pertenece a Patitas Felices", "Ok");
+
+                            }
+
                         }
 
-                        else
+                     else
                         {
-                           await DisplayAlert("Alerta","El código no pertenece a Patitas Felices","Ok");
+                            await DisplayAlert("Alerta", "El código no pertenece a Patitas Felices", "Ok");
 
                         }
+
+                    
 
                     }
 
@@ -83,7 +97,7 @@ namespace PatitasFelices2
             catch (Exception ex)
             {
 
-                await DisplayAlert("Error", ex.Message.ToString(), "OK");
+                await DisplayAlert("Error", "El Codigo QR no pertenece a Patitas Felices App", "OK");
             }
 
 

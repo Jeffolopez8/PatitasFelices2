@@ -59,10 +59,14 @@ namespace PatitasFelices2
                     parametros.Add("raza", lbl_raza.Text);
                     parametros.Add("fechaRegistro", Convert.ToString (dp_FechaRegistro.Date));
                     parametros.Add("estado","1");
-                    parametros.Add("codigoUsuario", "1");
-                    
 
-                    cliente.UploadValues("http://200.12.169.100/patitas/mascota/post.php", "POST", parametros);
+
+                    //Ingresar codigo usuario
+                    parametros.Add("codigoUsuario", "1");
+
+                    //Ingresar codigo usuario
+
+                    cliente.UploadValues("http://200.12.169.100/patitas/mascota/post.php?codigo="+""+"nombremascota="+lbl_NombreMascota.Text+"raza="+lbl_raza.Text+ "fechaRegistro="+Convert.ToString(dp_FechaRegistro.Date)+"estado=1"+"codigoUsuario=1", "POST", parametros);
 
 
 

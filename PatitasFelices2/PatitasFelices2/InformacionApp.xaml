@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PatitasFelices2"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="PatitasFelices2.InformacionApp"
+             Title="InformacionApp" 
+             IconImageSource="informacion.png"
+             >
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid >
+
+                <Image Source="fondo1.jpg" Aspect="Fill"></Image>
+
+                <!-- <BoxView BackgroundColor="White" Opacity="0.6"></BoxView>-->
+                <StackLayout Grid.Row="0" Padding="10,20" BackgroundColor="Transparent">
+                    
+
+
+                   
+                        
+                    <Image  Source="logopatitasfelices.png" WidthRequest="100" HeightRequest="100" Margin="0,10,0,10"></Image>
+                    <Image  Source="israel2.png" WidthRequest="100" HeightRequest="100" Margin="0,10,0,10"></Image>
+
+
+
+
+                    <Label Text="Proyecto Universitario de 9no A Universidad Israel" TextColor="Black" BackgroundColor="Transparent" FontSize="Small" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+                    <Label Text="Dedicado a nuestros fieles amigos..." TextColor="Black" BackgroundColor="Transparent" FontSize="Small" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+
+                    <Label Text="Autores:" TextColor="Black" BackgroundColor="Transparent" FontSize="Small" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+
+
+                    <Label Text="Jefferson López" TextColor="Black" BackgroundColor="Transparent" FontSize="Small" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+                    <Image Grid.Row="0" Source="Jeff.jpg" WidthRequest="200" HeightRequest="150" Margin="0,30,0,20"></Image>
+                    <Label Text="René Camacho" TextColor="Black" BackgroundColor="Transparent" FontSize="Small" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+
+                        <Image Grid.Row="0" Source="Rene1.jpg" WidthRequest="200" HeightRequest="150" Margin="0,30,0,20"></Image>
+
+                    <Label Text="Miguel Pisuña" TextColor="Black" BackgroundColor="Transparent" FontSize="Small" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+                        <Image Grid.Row="0" Source="migue.jpg" WidthRequest="200" HeightRequest="150" Margin="0,30,0,20"></Image>
+
+
+                </StackLayout>
+
+
+
+
+
+
+
+               
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
+

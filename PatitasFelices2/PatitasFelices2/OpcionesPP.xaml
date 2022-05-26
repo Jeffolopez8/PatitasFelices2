@@ -7,5 +7,11 @@
 
     <local:Principal></local:Principal>
     <local:QR></local:QR>
-     
+    <local:InformacionApp></local:InformacionApp>
+    <local:Logout></local:Logout>
+
+
+
+
+
 </TabbedPage>

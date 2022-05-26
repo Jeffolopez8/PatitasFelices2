@@ -52,12 +52,12 @@ namespace PatitasFelices2
                 var parametros = new System.Collections.Specialized.NameValueCollection();
 
                 parametros.Add("codigo", txt_CodigoMascota.Text);
-                parametros.Add("nombre", lbl_NombreMascotas.Text);
+                parametros.Add("nombremascota", lbl_NombreMascotas.Text);
                 parametros.Add("raza", lbl_razas.Text);
                 parametros.Add("fechaRegistro", Convert.ToString(dp_FechaRegistro.Date));
               
 
-                cliente.UploadValues("http://200.12.169.100/patitas/mascota/actualizamascota.php?codigo="+txt_CodigoMascota.Text+"&nombre="+lbl_NombreMascotas.Text+"&raza="+lbl_razas.Text+"&fecharegistro="+Convert.ToString(dp_FechaRegistro.Date), "PUT", parametros);
+                cliente.UploadValues("http://200.12.169.100/patitas/mascota/actualizamascota.php?codigo="+txt_CodigoMascota.Text+"&nombremascota="+lbl_NombreMascotas.Text+"&raza="+lbl_razas.Text+"&fecharegistro="+Convert.ToString(dp_FechaRegistro.Date), "PUT", parametros);
 
 
 

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatitasFelices2.Logout"
+             Title="LogOut"
+             IconImageSource="usuario.png">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid >
+
+                <Image Source="fondo1.jpg" Aspect="Fill"></Image>
+
+                <!-- <BoxView BackgroundColor="White" Opacity="0.6"></BoxView>-->
+
+                <Grid>
+
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+
+                    <Image Grid.Row="0" Source="logopatitasfelices.png" WidthRequest="100" HeightRequest="100" Margin="0,10,0,10"></Image>
+                    <StackLayout Grid.Row="1" Padding="10,20">
+                        <Image Grid.Row="0" Source="huella.jpg" WidthRequest="200" HeightRequest="150" Margin="0,30,0,20"></Image>
+                        
+                        <Button x:Name="btnCerrasesion" Text="Cerras Sesión" FontSize="Large" Padding="0" BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60" Clicked="btnCerrasesion_Clicked" ></Button>
+
+                    </StackLayout>
+
+
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
