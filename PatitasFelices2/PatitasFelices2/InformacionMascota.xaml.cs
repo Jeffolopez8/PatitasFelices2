@@ -13,12 +13,13 @@ namespace PatitasFelices2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InformacionMascota : ContentPage
     {
-        public InformacionMascota(int id, String nombre, string raza, string fecha)
+        public InformacionMascota(int id, String nombre, string raza, string fecha, string nombrecomp , string telefono, string correo)
         {
             InitializeComponent();
             txt_CodigoMascota.Text = Convert.ToString (id);
             lbl_principal.Text = "Información de: " + nombre;
             lbl_NombreMascotas.Text = nombre;
+            txt_infomascota.Text= nombrecomp+" "+ telefono+" "+ correo;
             lbl_razas.Text = Convert.ToString (raza);
            // dp_FechaRegistro.Date = Convert.ToDateTime(fecha);
         }
@@ -84,7 +85,7 @@ namespace PatitasFelices2
 
         private async void btn_CodQR_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new QRMascota(txt_CodigoMascota.Text, lbl_NombreMascotas.Text));
+            await Navigation.PushAsync(new QRMascota(txt_CodigoMascota.Text, lbl_NombreMascotas.Text, txt_infomascota.Text));
         }
     }
 }

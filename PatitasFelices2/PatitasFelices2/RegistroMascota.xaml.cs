@@ -55,7 +55,7 @@ namespace PatitasFelices2
                     var parametros = new System.Collections.Specialized.NameValueCollection();
 
                     parametros.Add("codigo", "");
-                    parametros.Add("nombre", lbl_NombreMascota.Text);
+                    parametros.Add("nombremascota", lbl_NombreMascota.Text);
                     parametros.Add("raza", lbl_raza.Text);
                     parametros.Add("fechaRegistro", Convert.ToString (dp_FechaRegistro.Date));
                     parametros.Add("estado","1");

@@ -34,20 +34,22 @@ namespace PatitasFelices2
 
         void lblClickFuncion()
         {
-            lblregistroApp.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(() =>
-               {
-                   AbreRegistro();
-
-               }
-               )
-             });
+           
         }
 
         private async void BtnRegistro_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RegistroUsuario());
+        }
+
+        private void BtnRecuperarContrasena_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnRegistro_Clicked_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

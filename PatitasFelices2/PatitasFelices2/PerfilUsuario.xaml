@@ -10,9 +10,15 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Frame BackgroundColor="Blue"  Padding="0.5" CornerRadius="0" >
-                    <Image Source="patitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
+            <Grid>
+                <Image Source="fondo1.jpg" Aspect="Fill"></Image>
+
+                <StackLayout>
+                  
+                    
+                    
+                <Frame BackgroundColor="Transparent"  Padding="0.5" CornerRadius="0" >
+                    <Image Source="logopatitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
                 </Frame>
 
                 <Label x:Name="lbl_principal" Text="INFORMACION DE USUARIOS" FontSize="Medium"/>
@@ -20,11 +26,11 @@
 
                 <Grid>
                 </Grid>
-                <Frame>
+                <Frame BackgroundColor="Transparent">
                     <StackLayout>
                         <Entry x:Name="lbl_codigo" Placeholder="Ingrese su codigo" FontSize="Medium"     Keyboard="Numeric" Text="{Binding codigo}"></Entry>
                         <Entry x:Name="lbl_nombre" Placeholder="Ingrese su nombre" FontSize="Medium"  Text="{Binding nombre}"></Entry>
-                        <Entry x:Name="lbl_apellido" Placeholder="Ingrese su apellido" FontSize="Medium" ></Entry>
+                        <Entry x:Name="lbl_apellido" Placeholder="Ingrese su apellido" FontSize="Medium" Text="{Binding apellido}" ></Entry>
                         <Entry x:Name="lbl_domicilio" Placeholder="Ingrese su domicilio" FontSize="Medium" ></Entry>
                         <Entry x:Name="lbl_telefono" Placeholder="Ingrese su telefono" FontSize="Medium"   Keyboard="Numeric"></Entry>
                         <Entry x:Name="lbl_correo" Placeholder="Email" Text="{Binding Email}" FontSize="Medium"  ></Entry>
@@ -41,16 +47,15 @@
 
                     </StackLayout>
                 </Frame>
-                <Button x:Name="btn_ActualizarUsuario" Text="ACTUALIZAR INFORMACION" FontSize="Large"
-                    Clicked="btn_ActualizarUsuario_Clicked"  CornerRadius="10" IsEnabled="True"
-                    TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
-                    Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+                <Button x:Name="btn_ActualizarUsuario" Text="ACTUALIZAR INFORMACION" 
+                    Clicked="btn_ActualizarUsuario_Clicked"   IsEnabled="True"
+                    FontSize="Large" Padding="0" BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60"></Button>
 
-                <Button x:Name="btn_RegresarU" Text="REGRESAR MENU" FontSize="Large"
-                    Clicked ="btn_RegresarU_Clicked"  CornerRadius="10" IsEnabled="True"
-                    TextColor="Violet" BorderColor="Violet" FontAttributes="Bold" Padding="8"
-                    Margin="32" BackgroundColor="White" BorderWidth="2"></Button>
+                <Button x:Name="btn_RegresarU" Text="REGRESAR MENU" 
+                    Clicked ="btn_RegresarU_Clicked"  IsEnabled="True"
+                     FontSize="Large" Padding="0" BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60"></Button>
             </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

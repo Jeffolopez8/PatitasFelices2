@@ -26,8 +26,9 @@
                             <Entry x:Name="lbl_razas" Placeholder="Ingrese la raza" FontSize="Medium" Completed="lbl_razas_Completed"  TextChanged="lbl_razas_TextChanged"></Entry>
                         <Label Text="Fecha de Registro de Mascota"></Label>
                         <DatePicker x:Name="dp_FechaRegistro"></DatePicker>
+                        <Entry x:Name="txt_infomascota" IsVisible="false" ></Entry>
 
-                        <Grid ColumnDefinitions="auto,*" >
+                            <Grid ColumnDefinitions="auto,*" >
                         </Grid>
 
                     </StackLayout>

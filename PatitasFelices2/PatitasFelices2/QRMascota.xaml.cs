@@ -15,11 +15,11 @@ namespace PatitasFelices2
     {
 
         ZXingBarcodeImageView qr;
-        public QRMascota(string id, string nombre )
+        public QRMascota(string id, string nombre, string info )
         {
             InitializeComponent();
             lblNombreMascota.Text="Código Qr de: "+nombre;
-            txtValorQR.Text = "*Codigo:"+id +"*Nombre: "+ nombre;
+            txtValorQR.Text = "*Codigo:"+id +"*  Nombre Mascota: "+ nombre +"  Informacion del dueno: " +info;
            
             generaAutoQR();
 

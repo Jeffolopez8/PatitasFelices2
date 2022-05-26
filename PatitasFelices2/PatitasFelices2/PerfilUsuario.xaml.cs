@@ -34,13 +34,16 @@ namespace PatitasFelices2
 
             if (response.IsSuccessStatusCode)
             {
-                var json = await response.Content.ReadAsStringAsync();
+                var json = response.Content.ReadAsStringAsync().Result;
+                var content = await client.GetStringAsync($"{Url}");
 
-                //var content = await client.GetStringAsync($"{Url}");
+                List<PatitasFelices2.WS.Usuarios> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Usuarios>>(content);
+                _post = new ObservableCollection<PatitasFelices2.WS.Usuarios>(posts);
 
-                List<PatitasFelices2.WS.Usuarios> result = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Usuarios>>(json);
-                _post = new ObservableCollection<PatitasFelices2.WS.Usuarios>(result);
-                                       
+                var nomusuario = posts.ToArray();
+
+                posts.First();
+
 
 
             }
@@ -54,6 +57,10 @@ namespace PatitasFelices2
 
 
         }
+
+
+
+
 
         private async void btn_ActualizarUsuario_Clicked(object sender, EventArgs e)
         {

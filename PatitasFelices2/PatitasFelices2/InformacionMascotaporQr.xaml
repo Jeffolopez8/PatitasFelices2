@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatitasFelices2.InformacionMascotaporQr">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <Grid>
+                <Image Source="fondo1.jpg" Aspect="Fill"></Image>
+                <StackLayout>
+
+                
+                    
+                    <Frame BackgroundColor="Transparent"  Padding="0.5" CornerRadius="0" >
+                    <Image Source="logopatitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
+                </Frame>
+
+                <Label x:Name="lbl_principal" Text="DATOS DE MASCOTA" FontSize="Medium" HorizontalOptions="Center"/>
+
+
+                <Grid>
+                </Grid>
+                <Frame BackgroundColor="Transparent">
+                    <StackLayout>
+
+                            <Label Text="Nombre de la mascota "></Label>
+                        <Entry x:Name="lbl_NombreMascotas"  FontSize="Medium" IsEnabled="False"></Entry>
+                            <Label Text="Raza"></Label>
+                            <Entry x:Name="lbl_razas" Placeholder="" FontSize="Medium" IsEnabled="False"></Entry>
+                            <Label Text="Mascota pertenece a:"></Label>
+                            <Entry x:Name="lbl_nombre" Placeholder="" FontSize="Medium" IsEnabled="False"></Entry>
+                            <Label Text="Teléfono de Contacto"></Label>
+                            <Entry x:Name="txtNumero" IsEnabled="False"></Entry>
+                            <Label Text="Correo de Contacto"></Label>
+                            <Entry x:Name="txtCorreo" IsEnabled="False"></Entry>
+
+
+                        <Grid ColumnDefinitions="auto,*" >
+                        </Grid>
+
+                    </StackLayout>
+                </Frame>
+                    <Button x:Name="btn_llamar" Text="Llamar al dueño de la mascota" Clicked="btn_llamar_Clicked" Margin="10,4,3,5" FontSize="Medium" Padding="0" BackgroundColor="Wheat" BorderWidth="0" TextColor="CadetBlue" CornerRadius="60" HorizontalOptions="CenterAndExpand" ></Button>
+
+                    <Button IsVisible="false" x:Name="btn_correo" Text="Enviar un Correo al Dueño de la mascota"  Clicked="btn_correo_Clicked" FontSize="Medium" Padding="0" BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60"></Button>
+
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
