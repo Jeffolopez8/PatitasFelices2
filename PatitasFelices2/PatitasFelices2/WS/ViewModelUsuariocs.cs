@@ -1,26 +1,49 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
+
 
 namespace PatitasFelices2.WS
 {
     public class ViewModelUsuariocs
     {
-        public int codigo { get; set; }
+        public async Task<T> Get<T>(string url)
+        {
+            HttpClient client = new HttpClient();
+            var response = await client.GetAsync(url);
+            var json = await response.Content.ReadAsStringAsync();
+            var listUsuario =JsonConvert.DeserializeObject<List<T>>(json);
+            return listUsuario[0];
 
-        public string nombre { get; set; }
+        }
 
-        public string apellido { get; set; }
 
-        public string direccion { get; set; }
 
-        public string telefono { get; set; }
+        public async Task<T> Login<T>(string url)
+        {
+            HttpClient client = new HttpClient();
+            var response = await client.GetAsync(url);
+            var json = await response.Content.ReadAsStringAsync();
+            var listaLog= JsonConvert.DeserializeObject<List<T>>(json);
 
-        public string correo { get; set; }
+           if (listaLog.Count > 0)
+            {
+                return listaLog[0];
 
-        public string nick { get; set; }
+            }
+            else
+            {
+                return default(T);
 
-        public string clave { get; set; }
+
+            }
+
+               
+
+        }
 
     }
 }

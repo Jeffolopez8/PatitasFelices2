@@ -25,7 +25,13 @@ namespace PatitasFelices2
         private async void btnMiPerfil_Clicked(object sender, EventArgs e)
         {
 
-            String codigousuario = "1";
+            LoginPF login = new LoginPF();
+
+            string codigousuario = login.traeusuario();
+
+
+
+
             await Navigation.PushAsync(new PerfilUsuario(codigousuario));
         }
     }

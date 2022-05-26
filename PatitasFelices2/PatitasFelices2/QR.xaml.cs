@@ -94,7 +94,7 @@ namespace PatitasFelices2
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 await DisplayAlert("Error", "El Codigo QR no pertenece a Patitas Felices App", "OK");

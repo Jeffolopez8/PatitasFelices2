@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PatitasFelices2.WS
 {
-    public class LoginWS
+    public class UsuarioConectado
     {
         public string codigo { get; set; }
 

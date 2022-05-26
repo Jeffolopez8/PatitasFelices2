@@ -12,9 +12,14 @@ namespace PatitasFelices2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OpcionesPP : TabbedPage
     {
-        public OpcionesPP()
+        public OpcionesPP(String codigo, string Nombre)
         {
             InitializeComponent();
+
+            string codigousu = codigo;
+            string nombreusu = Nombre;
+
+
         }
     }
 }

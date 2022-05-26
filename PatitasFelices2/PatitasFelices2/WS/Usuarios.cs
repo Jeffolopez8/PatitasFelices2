@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PatitasFelices2.WS
 {
-    internal class Usuarios
+    public class Usuarios
     {
         public int codigo { get; set; }
 

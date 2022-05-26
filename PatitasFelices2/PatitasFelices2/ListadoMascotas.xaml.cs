@@ -29,16 +29,20 @@ namespace PatitasFelices2
         public ListadoMascotas()
         {
             InitializeComponent();
+            LoginPF login = new LoginPF();
 
-            animalesporusuario();
+            string codigousuario = login.traeusuario();
+
+
+            animalesporusuario(codigousuario);
         }
 
 
-       public async void animalesporusuario()
+       public async void animalesporusuario(string codigousu)
         {
             try
             {
-                    string Url2 = "http://200.12.169.100/patitas/consultas/post2.php?codigo=1";
+                    string Url2 = "http://200.12.169.100/patitas/consultas/post2.php?codigo="+codigousu;
                     HttpResponseMessage response = await client.GetAsync($"{Url2}");
 
                 if (response.IsSuccessStatusCode)

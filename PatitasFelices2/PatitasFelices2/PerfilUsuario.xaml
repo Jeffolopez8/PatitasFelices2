@@ -21,22 +21,29 @@
                     <Image Source="logopatitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
                 </Frame>
 
-                <Label x:Name="lbl_principal" Text="INFORMACION DE USUARIOS" FontSize="Medium"/>
+                <Label x:Name="lbl_principal" Text="PERFIL DEL USUARIO" FontSize="Medium" HorizontalOptions="Center"/>
 
 
                 <Grid>
                 </Grid>
                 <Frame BackgroundColor="Transparent">
                     <StackLayout>
-                        <Entry x:Name="lbl_codigo" Placeholder="Ingrese su codigo" FontSize="Medium"     Keyboard="Numeric" Text="{Binding codigo}"></Entry>
-                        <Entry x:Name="lbl_nombre" Placeholder="Ingrese su nombre" FontSize="Medium"  Text="{Binding nombre}"></Entry>
-                        <Entry x:Name="lbl_apellido" Placeholder="Ingrese su apellido" FontSize="Medium" Text="{Binding apellido}" ></Entry>
-                        <Entry x:Name="lbl_domicilio" Placeholder="Ingrese su domicilio" FontSize="Medium" ></Entry>
-                        <Entry x:Name="lbl_telefono" Placeholder="Ingrese su telefono" FontSize="Medium"   Keyboard="Numeric"></Entry>
-                        <Entry x:Name="lbl_correo" Placeholder="Email" Text="{Binding Email}" FontSize="Medium"  ></Entry>
-                        <Entry x:Name="lbl_usuario" Placeholder="Ingrese su usuario" FontSize="Medium" ></Entry>
-                       
-                        <Button x:Name="btnCambioContrasena" Text="Cambiar Contraseña" Clicked="btnCambioContrasena_Clicked"></Button>
+                        <Entry x:Name="lbl_codigo" Placeholder="Ingrese su codigo" FontSize="Medium"     Keyboard="Numeric" Text="{Binding codigo}" TextColor="White"  IsVisible="false"></Entry>
+                            <Label Text="Nombre:"></Label>
+                            <Entry x:Name="lbl_nombre" Placeholder="Ingrese su nombre" FontSize="Medium"  Text="{Binding nombre}" TextColor="White"></Entry>
+                            <Label Text="Apellido:"></Label>
+                            <Entry x:Name="lbl_apellido" Placeholder="Ingrese su apellido" FontSize="Medium" Text="{Binding apellido}" TextColor="White" ></Entry>
+                            <Label Text="Domicilio:"></Label>
+                            <Entry x:Name="lbl_domicilio" Placeholder="Ingrese su domicilio" FontSize="Medium" TextColor="White" ></Entry>
+                            <Label Text="Telefono:"></Label>
+                            <Entry x:Name="lbl_telefono" Placeholder="Ingrese su telefono" FontSize="Medium"   Keyboard="Numeric" TextColor="White"></Entry>
+                            <Label Text="Correo:"></Label>
+                            <Entry x:Name="lbl_correo" Placeholder="Email" Text="{Binding Email}" FontSize="Medium" TextColor="White" ></Entry>
+                            <Label Text="Nick de usuario:"></Label>
+                            <Entry x:Name="lbl_usuario" Placeholder="Ingrese su usuario" FontSize="Medium" TextColor="White"></Entry>
+                            <Label Text="Nombre:"></Label>
+
+                            <Button x:Name="btnCambioContrasena" Text="Cambiar Contraseña" Clicked="btnCambioContrasena_Clicked"></Button>
                        
                         <Entry x:Name="lbl_password" Placeholder="Ingrese su nueva  contraseña" IsVisible="false" FontSize="Medium" IsPassword="True" ></Entry>
                         <Entry x:Name="lbl_password2" Placeholder="Ingrese nuevamente su nueva contraseña" IsVisible="false" FontSize="Medium" IsPassword="True" ></Entry>

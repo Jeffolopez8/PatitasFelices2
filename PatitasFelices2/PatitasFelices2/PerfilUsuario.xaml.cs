@@ -17,44 +17,73 @@ namespace PatitasFelices2
     public partial class PerfilUsuario : ContentPage
     {
 
-        private const string Url = "http://200.12.169.100/patitas/usuarios/post3.php?codigo=1";
+        
         private readonly HttpClient client = new HttpClient();
         private ObservableCollection<PatitasFelices2.WS.Usuarios> _post;
 
-          public PerfilUsuario( String codigoUsuario)
+        public PerfilUsuario(String codigoUsuario)
         {
             InitializeComponent();
-            TraeInformacionUsuario();
+            lbl_codigo.Text = codigoUsuario;
+            PatitasFelices2.WS.Usuarios usuario = new PatitasFelices2.WS.Usuarios();
+           // TraeInformacionUsuario();
+            llamaUsuarios();
+          
+
+        }
+
+
+        public async void llamaUsuarios()
+        {
+             string Url = "http://200.12.169.100/patitas/usuarios/post3.php?codigo="+ lbl_codigo.Text;
+             WS.ViewModelUsuariocs client = new WS.ViewModelUsuariocs();
+            var result = await client.Get<WS.Usuarios>(Url);
+            string h = string.Empty;
+
+            if (result != null)
+            {
+                lbl_codigo.Text = Convert.ToString(result.codigo);
+                lbl_nombre.Text = result.nombre;
+                lbl_apellido.Text = result.apellido;
+                lbl_domicilio.Text = result.direccion;
+                lbl_telefono.Text = result.telefono;
+                lbl_correo.Text = result.correo;
+                lbl_usuario.Text = result.nick;
+                lbl_password.Text = result.clave;
+                lbl_password2.Text = result.clave;
+            }
+
         }
 
 
         public async void TraeInformacionUsuario()
         {
+            string Url = "http://200.12.169.100/patitas/usuarios/post3.php?codigo=" + lbl_codigo.Text;
+            PatitasFelices2.WS.Usuarios usuario = new PatitasFelices2.WS.Usuarios();
             HttpResponseMessage response = await client.GetAsync($"{Url}");
 
             if (response.IsSuccessStatusCode)
             {
-                var json = response.Content.ReadAsStringAsync().Result;
-                var content = await client.GetStringAsync($"{Url}");
+                var json = await response.Content.ReadAsStringAsync();
 
-                List<PatitasFelices2.WS.Usuarios> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Usuarios>>(content);
+                //var content = await client.GetStringAsync($"{Url2}");
+
+                List<PatitasFelices2.WS.Usuarios> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Usuarios>>(json);
                 _post = new ObservableCollection<PatitasFelices2.WS.Usuarios>(posts);
 
-                var nomusuario = posts.ToArray();
+                lbl_codigo.Text = Convert.ToString (posts[0]);
 
-                posts.First();
+                lbl_nombre.Text = Convert.ToString(posts[1]);
 
 
 
-            }
-            else
-            {
-                var content = await client.GetStringAsync($"{Url}");
+              
 
-                List<PatitasFelices2.WS.Usuarios> posts = JsonConvert.DeserializeObject<List<PatitasFelices2.WS.Usuarios>>(content);
-                _post = new ObservableCollection<PatitasFelices2.WS.Usuarios>(posts);
+
+               
             }
 
+           
 
         }
 
@@ -107,9 +136,9 @@ namespace PatitasFelices2
 
         }
 
-        private void btn_RegresarU_Clicked(object sender, EventArgs e)
+        private async void btn_RegresarU_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new OpcionesPP(lbl_codigo.Text, lbl_nombre.Text));
         }
 
         private void btnCambioContrasena_Clicked(object sender, EventArgs e)
