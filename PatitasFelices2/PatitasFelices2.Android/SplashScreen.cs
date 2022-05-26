@@ -12,7 +12,7 @@ using System.Text;
 
 namespace PatitasFelices2.Droid
 {
-    [Activity(Label = "Patitas Felices App", Icon = "@mipmap/icon", 
+    [Activity(Label = "Patitas Felices App", Icon = "@mipmap/iconpf", 
         Theme = "@style/nuevotema", MainLauncher = true, 
         ConfigurationChanges = ConfigChanges.ScreenSize)]
     public class SplashScreen : Activity

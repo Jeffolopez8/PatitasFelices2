@@ -7,7 +7,7 @@ using Android.OS;
 
 namespace PatitasFelices2.Droid
 {
-    [Activity(Label = "PatitasFelices2", Icon = "@mipmap/icon",
+    [Activity(Label = "PatitasFelices2", Icon = "@mipmap/iconpf",
         Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
