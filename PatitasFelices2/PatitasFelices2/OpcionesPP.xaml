@@ -6,8 +6,8 @@
             NavigationPage.HasNavigationBar="False">
 
     <local:Principal></local:Principal>
+    <local:PrincipalAdopciones></local:PrincipalAdopciones>
     <local:QR></local:QR>
-    <local:InformacionApp></local:InformacionApp>
     <local:Logout></local:Logout>
         
     

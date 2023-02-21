@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatitasFelices2.OpcionesBusquedaAnimal">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <Grid>
+                <Image Source="fondo4.jpg" Aspect="Fill"></Image>
+
+                <StackLayout>
+                    <Frame BackgroundColor="Transparent"  Padding="0.5" CornerRadius="0" >
+                        <Image Source="logopatitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
+                    </Frame>
+
+                    <Label x:Name="lbl_principal" Text="Filtro de Adopciones" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold"/>
+                    <Entry x:Name="txtCodigoUsuario" IsVisible="false"></Entry>
+                   
+
+                    <Frame BackgroundColor="Transparent" BorderColor="DimGray">
+                        <StackLayout>
+                            <Label Text="Tipo de Mascota" HorizontalOptions="Center" FontSize="Medium"></Label>
+                           
+                            <RadioButton Content="Perro" x:Name="rbtperro" HorizontalOptions="Center"
+                             TextColor="White"
+                             GroupName="colors"
+                             CheckedChanged="rbtperro_CheckedChanged" />
+
+                            <RadioButton Content="Gato" x:Name="rbtGato" HorizontalOptions="Center"
+                             TextColor="White"
+                             GroupName="colors"
+                             CheckedChanged="rbtGato_CheckedChanged" />
+                         
+                        </StackLayout>
+                        
+                        
+                    </Frame>
+
+                    <Frame BackgroundColor="Transparent" BorderColor="DimGray">
+                        <StackLayout>
+                            <Label Text="Sexo de Mascota" HorizontalOptions="Center" FontSize="Medium"></Label>
+
+                            <RadioButton Content="Macho" x:Name="rbtmacho" HorizontalOptions="Center"
+                             TextColor="White"
+                             GroupName="colors"
+                             CheckedChanged="rbtmacho_CheckedChanged_1" />
+
+                            <RadioButton Content="Hembra" x:Name="rbthembra" HorizontalOptions="Center"
+                             TextColor="White"
+                             GroupName="colors"
+                             CheckedChanged="rbthembra_CheckedChanged" />
+
+                        </StackLayout>
+
+
+                    </Frame>
+
+
+                    <Frame BackgroundColor="Transparent" BorderColor="DimGray">
+                        <StackLayout>
+                            <Label Text="Edad de Mascota" HorizontalOptions="Center" FontSize="Medium"></Label>
+
+                            <RadioButton Content="Cachorro" x:Name="rbtcachorro" HorizontalOptions="Center"
+                             TextColor="White"
+                             GroupName="colors"
+                             CheckedChanged="rbtcachorro_CheckedChanged" />
+
+                            <RadioButton Content="Adulto" x:Name="rbtAdulto" HorizontalOptions="Center"
+                             TextColor="White"
+                             GroupName="colors"
+                             CheckedChanged="rbtAdulto_CheckedChanged" />
+
+                        </StackLayout>
+
+
+                    </Frame>
+
+
+                    <Button x:Name="btn_iniciabusquedaanimal" Text="Buscar"
+                    Clicked="btn_iniciabusquedaanimal_Clicked"  IsEnabled="True"
+                    FontSize="Large" Padding="0" BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60"></Button>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

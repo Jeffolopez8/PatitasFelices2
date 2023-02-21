@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatitasFelices2.ListadoFundaciones">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <Grid>
+
+                <Image Source="fondo4.jpg" Aspect="Fill" Margin="0,0,0,10"></Image>
+
+                <Grid>
+                    <StackLayout>
+
+                        <Frame BackgroundColor="Transparent"  Padding="0.5" CornerRadius="0" >
+                            <Image Source="logopatitasfelices.jpeg" HeightRequest="100" WidthRequest="100"/>
+                        </Frame>
+
+                        <Button x:Name="btnNuevaFundacion" Text="Nueva Fundacion" Clicked="btnNuevaFundacion_Clicked" FontSize="Medium"  BackgroundColor="Wheat" BorderWidth="20" TextColor="CadetBlue" CornerRadius="60" Padding="0" ></Button>
+                        <Label HorizontalTextAlignment="Center" Text="Fundaciones" FontSize="Large" FontAttributes="Bold" Margin="0,30,0,0" ></Label>
+                        <Label HorizontalTextAlignment="Center" Text="________________________________" FontSize="Large" FontAttributes="Bold" Margin="0,-30,0,20"></Label>
+
+
+                        <!-- Con CollectionView-->
+
+
+                        <!--        <CollectionView x:Name="cllvanimales" ItemsSource="{Binding _post}" SelectionMode="Single" SelectedItem="{Binding}" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="5"
+                                   CornerRadius="5"
+                                   IsClippedToBounds="False">
+
+                                <Grid HeightRequest="100">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                        <ColumnDefinition Width=".7*"></ColumnDefinition>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height=".5*"></RowDefinition>
+                                        <RowDefinition Height=".5*"></RowDefinition>
+
+                                    </Grid.RowDefinitions>
+
+                                    <Image Grid.RowSpan="2" Source="animal.png"></Image>
+                                    <Label Text="{Binding nombre}" Grid.Column="1" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" ></Label>
+                                    <Label Text="{Binding codigo}" Grid.Column="2" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" ></Label>
+
+
+
+                                </Grid>
+
+                            </Frame>
+                        </DataTemplate>
+
+
+                    </CollectionView.ItemTemplate>
+
+
+
+                </CollectionView>
+
+                                                                   -->
+
+
+
+                        <!-- Con List View -->
+
+
+
+
+                        <ListView x:Name="cllFundaciones" ItemsSource="{Binding _post}" SelectionMode="Single" ItemSelected="cllFundaciones_ItemSelected" SeparatorColor="White">
+                            <ListView.ItemTemplate>
+
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout HorizontalOptions="Center" VerticalOptions="Fill">
+                                            <Grid HeightRequest="800" WidthRequest="450">
+
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="*"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                                    <ColumnDefinition Width=".90*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Image Source="animal.png" WidthRequest="200" Grid.RowSpan="2"></Image>
+                                                <Label Text="{Binding NombreFundacion}" Grid.Column="1" FontAttributes="Bold" FontSize="Title" VerticalOptions="CenterAndExpand" Margin="0,0,30,0" IsTabStop="True" IsEnabled="True"></Label>
+
+
+                                                <!--<TextCell Detail="{Binding nombre}"></TextCell>{-->
+
+                                            </Grid>
+                                        </StackLayout>
+                                    </ViewCell>
+
+                                </DataTemplate>
+
+
+                            </ListView.ItemTemplate>
+
+
+
+
+
+                        </ListView>
+
+
+                    </StackLayout>
+
+                </Grid>
+
+            </Grid>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
